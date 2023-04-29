@@ -13,7 +13,15 @@
     <h1>Orlando Aguilar's Final Project</h1>
   </header>
     <h2>Display SpaceX's Successful and Failed Launches</h2>
-  <button onclick="createChart()">Create Chart</button>
+  <h3><button onclick="createChart()">Create Chart</button>
+    <label>
+      <input type="checkbox" name="success" value="true">
+      Show successful missions
+    </label>
+    <label>
+      <input type="checkbox" name="failure" value="true">
+      Show failed missions
+    </label></h3>
    <canvas id="myChart"></canvas>
   <script src="script.js"></script>
   </body>
