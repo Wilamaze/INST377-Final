@@ -1,5 +1,49 @@
+.header h1 {
+  display: grid;
+
+  /* colors */
+  background-color: #22333b;
+  color: #fbfcff;
+
+  /* shapes */
+  border-radius: 6px;
+  font-size: 1.5rem;
+  padding: 1.25rem;
+  border: 2px ridge;
+  margin:0; 
+
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+h3 {
+  display: grid;
+
+  /* colors */
+  background-color: #c6ac8f;
+  color: #fbfcff;
+
+  /* shapes */
+  border-radius: 6px;
+  font-size: 1.5rem;
+  padding: 1.25rem;
+  border: 2px ridge;
+  margin:0; 
+
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #eae0d5;
+}
+
 button {
-  background-color: #8797f2;
+  background-color: #5e503f;
   border: ridge;
   color: white;
   padding: 16px 32px;
@@ -12,14 +56,14 @@ button {
 }
 
 #myChart {
-  max-width: 1000px;
-  max-height: 1000px;
+  max-width: 500px;
+  max-height: 500px;
   margin: 1 auto;
 }
 
 .container {
   display: inline;
-  flex-direction: row;
+  flex-direction: flex;
   justify-content: center;
   align-items: center;
   height: 12vh;

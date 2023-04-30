@@ -10,10 +10,32 @@
 <body>
   <div class="wrapper">
   <header class="header">
+    <center>
     <h1>Orlando Aguilar's Final Project</h1>
+    </center>
   </header>
-    <h2>Display SpaceX's Successful and Failed Launches</h2>
-  <h3><button onclick="createChart()">Create Chart</button>
+  <h3>
+    Display SpaceX's Successful and Failed Launches
+    <canvas id="myChart"></canvas>
+    <p>
+      <small>
+        <center>
+          To update the chart follow these steps!
+          <ol>
+            <li>Select the checkbox options to choose whether you'd like to see successful or failed SpaceX missions or both!</li>
+            <li>Press the create chart button to create the instance of the chart you'd like to see!</li>
+            <li>If you wish to update the chart with different checkbox options, simply change the checkboxes and click the 
+              the create chart button again.
+            </li>
+            <li>If you wish to delete the chart all together you can click the delete chart button!</li>
+          </ol>
+        </center>
+      </small>
+    </p>
+    
+      <button onclick="createChart()">Create Chart</button>
+      <button onclick="deleteChart()">Delete Chart</button>
+    
     <label>
       <input type="checkbox" name="success" value="true">
       Show successful missions
@@ -21,8 +43,9 @@
     <label>
       <input type="checkbox" name="failure" value="true">
       Show failed missions
-    </label></h3>
-   <canvas id="myChart"></canvas>
+    </label>
+  </h3>
+  
   <script src="script.js"></script>
   </body>
 </html>
