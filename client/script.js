@@ -10,14 +10,29 @@ function deleteChart() {
 
 // sending a request to spacex api
 async function getData() {
-    const response = await fetch('https://api.spacexdata.com/v4/launches');
-    const data = await response.json();
-    return data;
+  if (localStorage.getItem('spacexData')) {
+    return JSON.parse(localStorage.getItem('spacexData'));
   }
+
+  const results = await fetch('https://api.spacexdata.com/v4/launches');
+  const data = await results.json();
+
+  localStorage.setItem('spacexData', JSON.stringify(data));
+  return data;
+}
+
+// event listener to getDataButton
+getDataButton.addEventListener('click', async function() {
+  // call getData and store the received data.
+  const newData = await getData();
+  localStorage.setItem('spacexData', JSON.stringify(newData));
+  alert('Data received');
+});
 
 // creating the chart to display data 
 async function createChart() {
   const data = await getData();
+  let newData = data;
 
   // defining the count variables for missions
   let successCount = 0;
@@ -41,6 +56,7 @@ async function createChart() {
     }
   });
 
+  
   // creating the pie chart data object
   const chartData = {
     labels: ['Successful Mission', 'Mission Failure'],
@@ -71,3 +87,5 @@ async function createChart() {
   // Creating aa new chart object and assign it to 'myChart'
   myChart = new Chart(document.getElementById('myChart'), pieConfig);
 }
+
+
